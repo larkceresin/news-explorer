@@ -23,8 +23,8 @@ function SignInPopout(props){
     }
     return(
         <PopoutWithForm isOpen={props.isSignInOpen} buttonText="Sign in" onClose={props.onClose} title="Sign in" link="Sign up" linkClick={props.linkClick} handleSubmit={props.handleSubmit} valid={formValid}>
-            <Input type="email" name="Email" handleChange={handleEmailChange} errorText="Invalid email address" valid={isEmailValid} placeholderText="Enter email"/>
-            <Input type="password" name="Password" handleChange={handlePasswordChange} placeholderText="Enter password" valid={isPasswordValid}/>
+            <Input type="email" name="Email-SignIn" handleChange={handleEmailChange} errorText="Invalid email address" valid={isEmailValid} placeholderText="Enter email"/>
+            <Input type="password" name="Password-SignIn" handleChange={handlePasswordChange} placeholderText="Enter password" valid={isPasswordValid}/>
             </PopoutWithForm>
     )
 }
