@@ -20,11 +20,11 @@ function Header(props) {
     }
     return (
         <header className="header">
-            <p className="header__text">NewsExplorer</p>
+            <p ><a href="/" className="header__text" > NewsExplorer</a></p>
             <button onClick={toggleMenu} className="header__dropdown-mobile " />
             <div className="header__nav">
                 <NavLink className="header__nav-link" activeClassName="header__nav-link_selected" to="/">Home</NavLink>
-                <NavLink className={`header__nav-link ${props.loggedIn ? '' : 'header__nav-link_hidden'}`} to="/saved">Saved articles</NavLink>
+                <NavLink className={`header__nav-link ${props.loggedIn ? '' : 'header__nav-link_hidden'}`} to="/saved-news">Saved articles</NavLink>
                 <button className="header__button button" onClick={props.buttonClick}>
                     {props.loggedIn ? `${currentUser.name}` : 'Sign in'}
                     <img className={props.loggedIn ? `header__image` : 'header__image header__image_hidden'} src={logout} alt="logout" />

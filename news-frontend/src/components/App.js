@@ -66,7 +66,7 @@ function App() {
           <Main headerClick={loggedIn ? logout : openSignIn} loggedIn={loggedIn} />
           <About />
         </Route>
-        <Route path='/saved'>
+        <Route path='/saved-news'>
           <SavedNews cards={cards} headerClick={logout} />
 
         </Route>

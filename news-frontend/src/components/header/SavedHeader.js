@@ -27,11 +27,11 @@ function SavedHeader(props) {
     }
     return (
         <header className="header header_saved">
-            <p className="header__text header__text_saved">NewsExplorer</p>
+            <p ><a className="header__text header__text_saved" href="/">NewsExplorer</a></p>
             <button onClick={toggleMenu} className="header__dropdown-mobile header__dropdown-mobile_saved" />
             <div className="header__nav ">
                 <NavLink className="header__nav-link header__nav-link_saved" to="/">Home</NavLink>
-                <NavLink className="header__nav-link header__nav-link_saved" activeClassName="header__nav-link_saved_selected" to="/saved">Saved articles</NavLink>
+                <NavLink className="header__nav-link header__nav-link_saved" activeClassName="header__nav-link_saved_selected" to="/saved-news">Saved articles</NavLink>
                 <button className=" button header__button header__button_saved" onClick={props.buttonClick}>
                     {currentUser.name}
                     <img className="header__image" src={logoutBlack} alt="logout" />
