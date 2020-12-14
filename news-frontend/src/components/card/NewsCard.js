@@ -10,7 +10,7 @@ function NewsCard(props) {
             <p className="card__date">{props.date}</p>
             <h3 className="card__title">{props.title}</h3>
             <p className="card__text">{props.text}</p>
-            <p><a href={props.link} className="card__source">{props.source}</a></p>
+            <p className="card__source-text"><a href={props.link} target="_blank" rel="noreferrer" className="card__source">{props.source}</a></p>
         </li>
     )
 }

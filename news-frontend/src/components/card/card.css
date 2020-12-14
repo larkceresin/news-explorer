@@ -1,15 +1,16 @@
 .card{
-    max-width: 400px;
+    width: 400px;
     height: 576px;
     position: relative;
     border-radius: 10px;
-    margin: 0 16px;
+    margin: 8px 16px;
     background-color: #fff;
 }
 .card__list{
     background-color: #f5f6f7;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     
 }
 .card__list-title{
@@ -18,6 +19,7 @@
     font-weight: 400;
     font-size: 40px;
     line-height: 46px;
+    width: 100vw;
 }
 .card__container{
     display: flex;
@@ -25,6 +27,7 @@
     list-style: none;
     flex-wrap: wrap;
     margin:64px auto ;
+    padding: 0;
 }
 .card__list-button{
     border-radius: 80px;
@@ -110,6 +113,7 @@
     display: none;
 }
 .card__source{
+    display: inline-block;
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -118,6 +122,14 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #B6BCBF;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.card__source-text{
+    width: 352px;
     margin: 2px 24px 24px;
 }
 .card__image{
@@ -133,7 +145,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    margin: 20px 24px 0;
+    margin: 20px 24px 12px;
 }
 .card__title{
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
@@ -143,6 +155,7 @@
     line-height: 30px;
     color: #1A1B22;
     margin: 0 24px;
+    text-overflow: ellipsis;
 }
 .card__text{
     display: -webkit-box;
@@ -161,8 +174,8 @@
 @media screen and (max-width:1100px){
     .card{
         width: 224px;
-        height: 420px;
-        margin: 0 8px;
+        height: 414px;
+        margin: 8px;
     }
     .card__list-title{
         margin: 40px 40px 0;
@@ -189,8 +202,16 @@
         width: 192px;
         height: 88px;
     }
+    .card__source-text{
+        width: 192px;
+        margin: 0 16px;
+    }
+    .card__sign-in-notice{
+        max-width:182px ;
+        width: 65%;
+    }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:540px){
     .card{
         width: 90%;
         margin: 10px auto;
@@ -201,18 +222,28 @@
         font-size: 30px;
     }
     .card__container{
-        flex-direction: column;
         margin: 0;
-        padding: 0;
     }
     .card__list-button{
         width: 90%;
         margin: 5px auto 32px;
     }
+    .card__date{
+        width: 90%;
+        margin: 16px auto 10px;
+    }
+    .card__title{
+        width: 90%;
+        margin: 0 auto 14px;
+    }
     .card__image{
         height: 196px;
     }
     .card__text{
-        width: 256px;
+        width: 90%;
+    }
+    .card__source-text{
+        width: 90%;
+        margin: 8px auto;
     }
 }

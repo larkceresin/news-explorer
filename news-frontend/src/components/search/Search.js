@@ -4,7 +4,7 @@ function Search(){
     return(
         <div className="search">
         <input placeholder="Enter topic" className="search__input"/>
-        <button className="search__button">Search</button>
+        <button className="button search__button">Search</button>
         </div>
     )
 }

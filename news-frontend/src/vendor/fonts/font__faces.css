@@ -3,7 +3,7 @@
   font-style:  normal;
   font-weight: 400;
   src: url('./fonts-backend/roboto-font/roboto-400-regular.woff') format('woff'),
-       url('./fonts-backend/roboto-font/roboto-400-regular.woff2') format(('woff2'));
+       url('./fonts-backend/roboto-font/roboto-400-regular.woff2') format('woff2');
   font-display: swap;
 }
 @font-face{

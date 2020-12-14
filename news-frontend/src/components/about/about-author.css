@@ -1,6 +1,7 @@
 .about-author{
 display: flex;
 margin: 80px 104px;
+max-width: 100%;
 
 }
 .about-author__image{
@@ -20,29 +21,28 @@ margin: 80px 104px;
     font-weight: 400;
     font-size: 40px;
     line-height: 46px;
+    max-width: 90vw;
 }
 .about-author__text{
     margin: 0;
     margin-bottom: 10px;
-    padding: 0;
     max-width: 600px;
     width: auto;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-style: normal;
     font-size: 18px;
     line-height: 24px;
 }
 
 
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1100px){
     .about-author{
         margin: 40px;
     }
     .about-author__image{
-        max-width: 232px;
-        max-height: 232px;
+        width: 232px;
+        height: 232px;
         margin-top: 21px;
     }
     .about-author__text-area{
@@ -59,29 +59,29 @@ margin: 80px 104px;
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 540px){
     .about-author{
-        display: inline;
+        display: block;
         margin: 0;
-        width: 100vw;
+        width: 95%;
         margin-top: 8px;
     }
     .about-author__image{
         width: 90%;
-        height: 85vw;
-        margin: 10%;
+        height: 90vw;
+        margin: 24px;
 
     }
     .about-author__text-area{
-        margin: auto;
-        width: 90%;
+        margin: 0;
+        width: 100%;
     }
     .about-author__title{
         width: 90%;
-        margin: 16px auto;
+        margin: 0px 16px;
     }
     .about-author__text{
-        width: 90%;
-        margin: 0 auto 24px;
+        width: 95%;
+        margin: 16px 16px 24px;
     }
 }

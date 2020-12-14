@@ -38,7 +38,7 @@
 .search__button:active{
     background: #2A65CC;
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:1100px){
     .search{
         width: 448px;
         height: 56px;
@@ -56,7 +56,7 @@
     }
     
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:540px){
     .search{
         width: 90vw;
         margin: 122px auto;
@@ -65,13 +65,13 @@
     .search__input{
         width: 90%;
         margin: 0 auto;
-        padding: 5%;
+        padding: 4.6%;
     }
     .search__button{
         position: relative;
         margin: 16px auto 32px;
-        padding: 0;
         width: 100%;
+        padding: 0;
         height: 56px;
     }
 }
