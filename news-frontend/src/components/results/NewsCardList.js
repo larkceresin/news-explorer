@@ -16,11 +16,12 @@ return(
                 link={card.link}
                 image={card.image}
                 savedArticles={props.savedArticles}
+                hoverText={props.hoverText}
                 loggedIn={props.loggedIn}
                 />)
             })}
         </ul>
-       <button className={`card__list-button ${props.savedArticles? 'card__element_hidden':'' }`}>Show more</button>
+       <button className={`button card__list-button ${props.savedArticles? 'card__element_hidden':'' }`}>Show more</button>
     </section>
 )
 }

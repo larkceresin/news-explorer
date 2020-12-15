@@ -3,7 +3,7 @@
     height: 576px;
     position: relative;
     border-radius: 10px;
-    margin: 8px 16px;
+    margin: 8px 8px;
     background-color: #fff;
 }
 .card__list{
@@ -25,8 +25,10 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    align-content: center;
     margin:64px auto ;
+    width: 90%;
     padding: 0;
 }
 .card__list-button{
@@ -40,6 +42,7 @@
     line-height: 24px;
     text-align: center;
     margin: 0 auto 80px;
+    border: 0;
 }
 
 .card__save-button{
@@ -58,11 +61,11 @@
 .card__save-button:hover{
     background-image: url(../../images/hover-bookmark.png);
 }
-.card__save-button:active{
+.card__save-button_saved{
     background-image: url(../../images/filled-bookmark.png);
 }
 
-.card__sign-in-notice{
+.card__hover-text{
     background-color: #fff;
     position: absolute;
     top: 24px;
@@ -71,6 +74,7 @@
     width: 182px;
     height: 40px;
     border-radius: 10px;
+    border: 0;
     text-align: center;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -79,6 +83,7 @@
 }
 
 .card__trash-button{
+    border: 0;
     background-color: #fff;
     width: 40px;
     height: 40px;
@@ -108,6 +113,7 @@
     height: 40px;
     padding: 0 22px;
     text-transform: capitalize;
+    border: 0;
 }
 .card__element_hidden{
     display: none;
@@ -137,7 +143,8 @@
     z-index: 0;
     width: 100%;
     height: 272px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .card__date{
     color:#B6BCBF;
@@ -174,8 +181,8 @@
 @media screen and (max-width:1100px){
     .card{
         width: 224px;
-        height: 414px;
-        margin: 8px;
+        height: 420px;
+        margin: 4px;
     }
     .card__list-title{
         margin: 40px 40px 0;
@@ -184,6 +191,8 @@
     }
     .card__container{
         margin: 32px auto;
+        width: 100%;
+        justify-content: center;
     }
     .card__list-button{
         margin: 0 auto 40px;
@@ -191,7 +200,7 @@
         height: 56px;
     }
     .card__image{
-        height: 150px;
+        max-height: 150px;
     }
     .card__title{
         font-size: 22px;
@@ -210,22 +219,39 @@
         max-width:182px ;
         width: 65%;
     }
+    .card__save-button{
+        top: 8px;
+        right: 8px;
+    }
+    .card__trash-button{
+        top: 8px;
+        right: 8px;
+    }
+    .card__keyword-button{
+        top: 8px;
+        left: 8px;
+    }
 }
 @media screen and (max-width:540px){
     .card{
+        max-width: 288px;
         width: 90%;
         margin: 10px auto;
         height: 446px;
+    }
+    .card__image{
+        min-height: 196px;
     }
     .card__list-title{
         margin: 32px 16px 48px;
         font-size: 30px;
     }
+ 
     .card__container{
         margin: 0;
     }
     .card__list-button{
-        width: 90%;
+        width: 288px;
         margin: 5px auto 32px;
     }
     .card__date{
@@ -236,14 +262,23 @@
         width: 90%;
         margin: 0 auto 14px;
     }
-    .card__image{
-        height: 196px;
-    }
     .card__text{
         width: 90%;
     }
     .card__source-text{
         width: 90%;
         margin: 8px auto;
+    }
+    .card__save-button{
+        top: 16px;
+        right: 16px;
+    }
+    .card__trash-button{
+        top: 16px;
+        right: 16px;
+    }
+    .card__keyword-button{
+        top: 16px;
+        left: 16px;
     }
 }

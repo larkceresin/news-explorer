@@ -30,9 +30,9 @@ function SignUpPopout(props){
     }
     return(
         <PopoutWithForm isOpen={props.isSignUpOpen} buttonText="Sign up" onClose={props.onClose} title="Sign up" link="Sign in" linkClick={props.linkClick} handleSubmit={props.handleSubmit} valid={formValid}>
-            <Input type="email" name="Email-SignUp" handleChange={handleEmailChange} errorText="Invalid email address" valid={isEmailValid} placeholderText="Enter email"/>
-            <Input type="password" name="Password-SignUp" handleChange={handlePasswordChange} placeholderText="Enter password"/>
-            <Input type="text" name="Username-SignUp" handleChange={handleUserChange} errorText="This username is not available" valid={isUserValid} placeholderText="Enter your username"/>
+            <Input type="email" name="Email" form="sign-up" handleChange={handleEmailChange} errorText="Invalid email address" valid={isEmailValid} placeholderText="Enter email"/>
+            <Input type="password" name="Password" form="sign-up" handleChange={handlePasswordChange} placeholderText="Enter password"/>
+            <Input type="text" name="Username" form="sign-up" handleChange={handleUserChange} errorText="This username is not available" valid={isUserValid} placeholderText="Enter your username"/>
             </PopoutWithForm>
     )
 }

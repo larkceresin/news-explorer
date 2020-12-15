@@ -69,7 +69,8 @@ max-width: 100%;
     .about-author__image{
         width: 90%;
         height: 90vw;
-        margin: 24px;
+        margin: 24px 0;
+        margin-left: 24px;
 
     }
     .about-author__text-area{

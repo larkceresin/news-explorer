@@ -46,8 +46,8 @@
         height: 536px;
         display: flex;
         flex-direction: column;
-        background-size: 200% 100%;
-        background-position: 35% 50%;
+        background-image: url('../../images/mobile-georgia-de-lotz--UsJoNxLaNo-unsplash.png');
+        width: 100%;
     }
     .main__title{
         margin: 30px auto 0;
