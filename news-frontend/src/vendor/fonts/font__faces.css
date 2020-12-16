@@ -1,0 +1,73 @@
+@font-face{
+  font-family: 'Roboto';
+  font-style:  normal;
+  font-weight: 400;
+  src: url('./fonts-backend/roboto-font/roboto-400-regular.woff') format('woff'),
+       url('./fonts-backend/roboto-font/roboto-400-regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face{
+    font-family: 'Roboto';
+    font-style:  normal;
+    font-weight: 500;
+    src: url('./fonts-backend/roboto-font/roboto-500.woff') format('woff'),
+         url('./fonts-backend/roboto-font/roboto-500.woff2') format(('woff2'));
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts-backend/roboto-font/roboto-700.woff') format('woff'),
+         url('./fonts-backend/roboto-font/roboto-700.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  @font-face{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./fonts-backend/roboto-font/roboto-900.woff') format('woff'),
+         url('./fonts-backend/roboto-font/roboto-900.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Roboto Slab';
+    font-style:  normal;
+    font-weight: 400;
+    src: url('./fonts-backend/roboto-slab-font/roboto-slab-400-regular.woff') format('woff'),
+         url('./fonts-backend/roboto-slab-font/roboto-slab-400-regular.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Roboto Slab';
+    font-style:  normal;
+    font-weight: 700;
+    src: url('./fonts-backend/roboto-slab-font/roboto-slab-700.woff') format('woff'),
+         url('./fonts-backend/roboto-slab-font/roboto-slab-700.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts-backend/inter-font/inter-400-regular.woff') format('woff'),
+        url('./fonts-backend/inter-font/inter-400-regular.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts-backend/inter-font/inter-500.woff') format('woff'),
+        url('./fonts-backend/inter-font/inter-500.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  @font-face{
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts-backend/sourcesanspro-regular.woff) format('woff');
+    font-display: swap;
+  }

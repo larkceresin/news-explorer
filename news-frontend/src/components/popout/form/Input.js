@@ -3,7 +3,7 @@ function Input(props){
     return(
         <>
         <label htmlFor={props.name} className="form__input-title">{props.name}</label>
-        <input required id={props.name}
+        <input required id={props.name+'-'+props.form}
         className="form__input"
         type={props.type}
         name={props.name}

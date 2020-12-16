@@ -38,14 +38,19 @@
     height: 20px;
     margin-left: 28px;
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:1100px){
+    .footer{
+        margin: 20px 40px;
+    }
+}
+@media screen and (max-width:540px){
     .footer{
         flex-direction: column-reverse;
         margin: 20px 16px;
     }
     .footer__copywright{
         width: 90vw;
-        margin-top: 20px;
+        margin: 20px 0 0;
     }
     .footer__content{
         margin: 0;

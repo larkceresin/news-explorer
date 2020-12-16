@@ -20,7 +20,7 @@ function getKeywords(){
             <p className="saved__title">Saved articles</p>
             <h1 className="saved__heading">{currentUser.name}, you have {props.cards.length} saved articles</h1>
             <p className="saved__text">By keywords: <span className="saved__keywords">{getKeywords()}</span></p>
-            <NewsCardList cards={props.cards} savedArticles="true" loggedIn="true"/>
+            <NewsCardList cards={props.cards} savedArticles="true" loggedIn="true" hoverText="Remove from saved"/>
         </section>
     )
 }

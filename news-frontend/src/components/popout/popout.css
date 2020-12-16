@@ -30,7 +30,7 @@
 .popout__close-button{
     margin: 0;
     text-decoration: none;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,0);
     cursor: pointer;
     border: 0;
     background-image: url(../../images/close-button.png);
@@ -86,11 +86,11 @@
     text-align: start;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 540px){
     .popout{
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
     }
     .popout::after{
         display: none;

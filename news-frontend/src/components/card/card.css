@@ -1,15 +1,16 @@
 .card{
-    max-width: 400px;
+    width: 400px;
     height: 576px;
     position: relative;
     border-radius: 10px;
-    margin: 0 16px;
+    margin: 8px 8px;
     background-color: #fff;
 }
 .card__list{
     background-color: #f5f6f7;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     
 }
 .card__list-title{
@@ -18,13 +19,17 @@
     font-weight: 400;
     font-size: 40px;
     line-height: 46px;
+    width: 100vw;
 }
 .card__container{
     display: flex;
     flex-direction: row;
     list-style: none;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    align-content: center;
     margin:64px auto ;
+    width: 90%;
+    padding: 0;
 }
 .card__list-button{
     border-radius: 80px;
@@ -37,6 +42,7 @@
     line-height: 24px;
     text-align: center;
     margin: 0 auto 80px;
+    border: 0;
 }
 
 .card__save-button{
@@ -55,11 +61,11 @@
 .card__save-button:hover{
     background-image: url(../../images/hover-bookmark.png);
 }
-.card__save-button:active{
+.card__save-button_saved{
     background-image: url(../../images/filled-bookmark.png);
 }
 
-.card__sign-in-notice{
+.card__hover-text{
     background-color: #fff;
     position: absolute;
     top: 24px;
@@ -68,6 +74,7 @@
     width: 182px;
     height: 40px;
     border-radius: 10px;
+    border: 0;
     text-align: center;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -76,6 +83,7 @@
 }
 
 .card__trash-button{
+    border: 0;
     background-color: #fff;
     width: 40px;
     height: 40px;
@@ -105,11 +113,13 @@
     height: 40px;
     padding: 0 22px;
     text-transform: capitalize;
+    border: 0;
 }
 .card__element_hidden{
     display: none;
 }
 .card__source{
+    display: inline-block;
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -118,6 +128,14 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #B6BCBF;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.card__source-text{
+    width: 352px;
     margin: 2px 24px 24px;
 }
 .card__image{
@@ -125,7 +143,8 @@
     z-index: 0;
     width: 100%;
     height: 272px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .card__date{
     color:#B6BCBF;
@@ -133,7 +152,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    margin: 20px 24px 0;
+    margin: 20px 24px 12px;
 }
 .card__title{
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
@@ -143,6 +162,7 @@
     line-height: 30px;
     color: #1A1B22;
     margin: 0 24px;
+    text-overflow: ellipsis;
 }
 .card__text{
     display: -webkit-box;
@@ -162,7 +182,7 @@
     .card{
         width: 224px;
         height: 420px;
-        margin: 0 8px;
+        margin: 4px;
     }
     .card__list-title{
         margin: 40px 40px 0;
@@ -171,6 +191,8 @@
     }
     .card__container{
         margin: 32px auto;
+        width: 100%;
+        justify-content: center;
     }
     .card__list-button{
         margin: 0 auto 40px;
@@ -178,7 +200,7 @@
         height: 56px;
     }
     .card__image{
-        height: 150px;
+        max-height: 150px;
     }
     .card__title{
         font-size: 22px;
@@ -189,30 +211,74 @@
         width: 192px;
         height: 88px;
     }
+    .card__source-text{
+        width: 192px;
+        margin: 0 16px;
+    }
+    .card__sign-in-notice{
+        max-width:182px ;
+        width: 65%;
+    }
+    .card__save-button{
+        top: 8px;
+        right: 8px;
+    }
+    .card__trash-button{
+        top: 8px;
+        right: 8px;
+    }
+    .card__keyword-button{
+        top: 8px;
+        left: 8px;
+    }
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:540px){
     .card{
+        max-width: 288px;
         width: 90%;
         margin: 10px auto;
         height: 446px;
+    }
+    .card__image{
+        min-height: 196px;
     }
     .card__list-title{
         margin: 32px 16px 48px;
         font-size: 30px;
     }
+ 
     .card__container{
-        flex-direction: column;
         margin: 0;
-        padding: 0;
     }
     .card__list-button{
-        width: 90%;
+        width: 288px;
         margin: 5px auto 32px;
     }
-    .card__image{
-        height: 196px;
+    .card__date{
+        width: 90%;
+        margin: 16px auto 10px;
+    }
+    .card__title{
+        width: 90%;
+        margin: 0 auto 14px;
     }
     .card__text{
-        width: 256px;
+        width: 90%;
+    }
+    .card__source-text{
+        width: 90%;
+        margin: 8px auto;
+    }
+    .card__save-button{
+        top: 16px;
+        right: 16px;
+    }
+    .card__trash-button{
+        top: 16px;
+        right: 16px;
+    }
+    .card__keyword-button{
+        top: 16px;
+        left: 16px;
     }
 }
