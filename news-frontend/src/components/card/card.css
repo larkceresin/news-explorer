@@ -1,10 +1,15 @@
 .card{
+    position: relative;
     width: 400px;
     height: 576px;
     position: relative;
     border-radius: 10px;
     margin: 8px 8px;
     background-color: #fff;
+}
+.card__link{
+    color: #000;
+    text-decoration: none;
 }
 .card__list{
     background-color: #f5f6f7;
@@ -27,6 +32,7 @@
     list-style: none;
     flex-wrap: wrap; 
     align-content: center;
+    justify-content: center;
     margin:64px auto ;
     width: 90%;
     padding: 0;
@@ -155,6 +161,10 @@
     margin: 20px 24px 12px;
 }
 .card__title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
     font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;

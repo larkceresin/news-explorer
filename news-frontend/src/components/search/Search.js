@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Search(){
+function Search(props){
+    const [keyword, setKeyword]= useState('')
+    function onSearchChange(e){
+            setKeyword(e.target.value)
+    }
+    function submission(e){
+        e.preventDefault()
+        props.onSubmit(keyword)
+    }
     return(
-        <div className="search">
-        <input placeholder="Enter topic" className="search__input"/>
+        <form  onSubmit={submission} className="search">
+        <input placeholder="Enter topic" className="search__input" onChange={onSearchChange}/>
         <button className="button search__button">Search</button>
-        </div>
+        </form>
     )
 }
 export default Search;
