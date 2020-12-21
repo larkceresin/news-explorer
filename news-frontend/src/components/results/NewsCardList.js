@@ -28,8 +28,6 @@ function NewsCardList(props) {
                         savedArticles={props.savedArticles}
                         hoverText={props.hoverText}
                         loggedIn={props.loggedIn}
-                        saveClickHandler={props.onSaveClick}
-                        removeClickHandler={props.removeSave}
                         cardId={card._id}
                     />)
                 }) : displayedCards.map((card, index) => {
@@ -45,8 +43,6 @@ function NewsCardList(props) {
                         savedArticles={props.savedArticles}
                         hoverText={props.hoverText}
                         loggedIn={props.loggedIn}
-                        saveClickHandler={props.onSaveClick}
-                        removeClickHandler={props.removeSave}
                     />)
                 })
                 }
