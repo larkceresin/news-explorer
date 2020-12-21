@@ -133,9 +133,11 @@ function App() {
           setNoResults(false);
           setResults(true);
         }
-
-
       })
+    .catch((err)=>{
+      setLoading(false);
+      console.log(err);
+    })
   }
   
   return (
