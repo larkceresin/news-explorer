@@ -59,7 +59,7 @@ function SavedNews(props) {
             <h1 className="saved__heading">{currentUser.name}, you have {savedCards.length} saved articles</h1>
             <p className="saved__text">By keywords: <span className="saved__keywords">{getKeywords()}</span></p>
             <NewsCardList cards={savedCards} onSaveClick={props.onSaveClick}
-                removeSave={props.removeSave} savedArticles="true" loggedIn="true" hoverText="Remove from saved" />
+               loggedIn="true" hoverText="Remove from saved" />
         </section>
     )
 }
