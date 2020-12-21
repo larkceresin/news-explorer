@@ -22,7 +22,7 @@ class NewsApi {
         return this._lastWeekDisplay
     }
     getArticles(keyword) {
-        return fetch(this._baseUrl + '/v2/everything?q=' + keyword + '&from=' + this._lastWeekDisplay + '&to=' + this._todayDisplay + '&pageSize=100', {
+        return fetch(this._baseUrl + '/v2/everything?q=' + keyword + '&from=' + this._lastWeekDisplay + '&to=' + this._todayDisplay + '&pageSize=100&apiKey=4f6e4e7d0f1443aeab5a8dc6dcb3d632', {
             headers: {
                 authorization: "4f6e4e7d0f1443aeab5a8dc6dcb3d632",
                 'content-type':'application/json'
