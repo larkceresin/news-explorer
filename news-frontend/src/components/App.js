@@ -137,21 +137,14 @@ function App() {
 
       })
   }
-  function saveCard( {title, text, date, source, link} ) {
-
-    practicumBackend.saveArticle({ keyword: keyword, title, text, date, source, link })
-    .then(res=>{return res})
-  }
-  function unlike(id) {
-    practicumBackend.removeArticle(id)
-  }
+  
   return (
     <CurrentUserContext.Provider value={currentUser}>
 
       <Switch>
         <Route exact path="/">
           <Main headerClick={loggedIn ? logout : openSignIn} loggedIn={loggedIn} search={search} />
-          {results ? <NewsCardList onSaveClick={saveCard} removeSave={unlike} cards={cards} keyword={keyword} loggedIn={loggedIn} hoverText="Sign in to save articles" /> : ''}
+          {results ? <NewsCardList cards={cards} keyword={keyword} loggedIn={loggedIn} hoverText="Sign in to save articles" /> : ''}
           {noResults ? <NoResults /> : ''}
           {loading ? <Preloader /> : ''}
           <About />
@@ -160,8 +153,6 @@ function App() {
         loggedIn={loggedIn}
         component={SavedNews}
         headerClick={logout}
-        onSaveClick={saveCard} 
-        removeSave={unlike} 
         />
 
 
