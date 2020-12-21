@@ -25,6 +25,7 @@ class NewsApi {
         return fetch(this._baseUrl + '/v2/everything?q=' + keyword + '&from=' + this._lastWeekDisplay + '&to=' + this._todayDisplay + '&pageSize=100', {
             headers: {
                 authorization: "4f6e4e7d0f1443aeab5a8dc6dcb3d632",
+                'content-type':'application/json'
             }
         })
             .then((res) => res.ok ? res.json() : Promise.reject(`Error!` + res.status + res.statusText))
@@ -32,6 +33,6 @@ class NewsApi {
     }
 }
 
-const newsApi = new NewsApi('https://newsapi.org')
+const newsApi = new NewsApi('https://nomoreparties.co/news')
 
 export default newsApi;
