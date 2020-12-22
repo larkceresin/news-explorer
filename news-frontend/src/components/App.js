@@ -80,7 +80,6 @@ function App() {
     } return
   })
   function signInSubmit({ email, password }) {
-    console.log(password, email)
     auth.authorize(password, email)
       .then(res => {
         if (res.token) {
@@ -100,7 +99,6 @@ function App() {
       .catch(err => console.log(err))
   }
   function signUpSubmit({ email, password, name }) {
-    console.log(email, password, name)
     auth.register(email, password, name)
       .then(res => {
         console.log(res)
