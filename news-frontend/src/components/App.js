@@ -14,7 +14,6 @@ import SavedNews from './saved/SavedNews';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import newsApi from '../utils/API/news-api';
 import * as auth from '../utils/auth';
-import PracticumBackend from '../utils/API/practicum-api';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
@@ -25,21 +24,11 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [keyword, setKeyword] = useState('');
   const [cards, setCards] = useState([]);
-  const [savedCards, setSavedCards] = useState([])
   const [results, setResults] = useState(false);
   const [loading, setLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
   const [userToken, setUserToken] = useState('');
   const history = useHistory()
-
-  const practicumBackend = new PracticumBackend({
-    baseUrl: 'https://www.api.larkceresin.students.nomoreparties.site',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${userToken}`,
-    }
-  })
 
   useEffect(() => {
     if (localStorage.getItem('jwt')) {
@@ -52,7 +41,7 @@ function App() {
         })
         .catch(err => console.log(err))
     }
-  }, [userToken, savedCards])
+  }, [userToken])
 
   function openSignIn() {
     setIsSignUpOpen(false);
