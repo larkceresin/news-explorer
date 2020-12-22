@@ -33,7 +33,7 @@ function App() {
   const history = useHistory()
 
   const practicumBackend = new PracticumBackend({
-    baseUrl: 'http://www.api.larkceresin.students.nomoreparties.site',
+    baseUrl: 'https://www.api.larkceresin.students.nomoreparties.site',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ function SavedNews(props) {
     const [savedCards, setSavedCards] = useState([])
 
     const practicumBackend = new PracticumBackend({
-        baseUrl: 'http://www.api.larkceresin.students.nomoreparties.site',
+        baseUrl: 'https://www.api.larkceresin.students.nomoreparties.site',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
