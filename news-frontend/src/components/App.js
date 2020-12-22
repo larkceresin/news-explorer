@@ -138,7 +138,8 @@ function App() {
           {loading ? <Preloader /> : ''}
           <About />
         </Route>
-        <ProtectedRoute path="/saved-news"
+        <ProtectedRoute 
+        path="/saved-news"
         loggedIn={loggedIn}
         component={SavedNews}
         headerClick={logout}

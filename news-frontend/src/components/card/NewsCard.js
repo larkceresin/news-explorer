@@ -45,18 +45,18 @@ function NewsCard(props) {
 
   function handleRemoveClick() {
     if (props.cardId){
-      setCardId()
-      console.log(cardId)
+      setCardId(props.cardId)
       practicumBackend.removeArticle(props.cardId)
     }
    
   }
+  
   function formatDate() {
-    let currentDate = props.date;
+    let articleDate = props.date || '2020-12-12';
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let noTime = currentDate.slice(0, 10)
-    let date = new Date(noTime)
-    let formattedDate = `${months[date.getMonth()]} ${date.getDay()},  ${date.getFullYear()}`
+    let noTime = articleDate.slice(0, 10);
+    let date = new Date(noTime);
+    let formattedDate = `${months[date.getMonth()]} ${date.getDay()},  ${date.getFullYear()}`;
     return formattedDate
   }
 

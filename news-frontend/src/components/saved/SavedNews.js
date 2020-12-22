@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import SavedHeader from '../header/SavedHeader';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import NewsCardList from '../results/NewsCardList';
@@ -17,13 +17,16 @@ function SavedNews(props) {
             'Authorization': `Bearer ${userToken}`,
         }
     })
-    useEffect(()=>{
+    useEffect(() => {
         practicumBackend.getSavedArticles()
-        .then(res=>{
-            setSavedCards(res.articles)})
-        .catch(err=>console.log(err))
+            .then(res => {
+                console.log(res)
+                setSavedCards(res.articles)
+            })
+            .catch(err => console.log(err))
 
-    },[savedCards])
+        
+    }, [savedCards])
 
     function getKeywords() {
         let keywords = []
@@ -58,8 +61,11 @@ function SavedNews(props) {
             <p className="saved__title">Saved articles</p>
             <h1 className="saved__heading">{currentUser.name}, you have {savedCards.length} saved articles</h1>
             <p className="saved__text">By keywords: <span className="saved__keywords">{getKeywords()}</span></p>
-            <NewsCardList cards={savedCards} onSaveClick={props.onSaveClick}
-               loggedIn="true" hoverText="Remove from saved" />
+            <NewsCardList
+                cards={savedCards}
+                loggedIn="true"
+                savedArticles="true"
+                hoverText="Remove from saved" />
         </section>
     )
 }

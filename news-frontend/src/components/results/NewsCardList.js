@@ -2,14 +2,20 @@ import React, { useEffect, useState } from 'react';
 import NewsCard from '../card/NewsCard';
 function NewsCardList(props) {
     const [isButtonVisible, setIsButtonVisible] = useState(false);
-    const [displayedCards, setDisplayedCards] = useState(props.cards);
+    const [displayedCards, setDisplayedCards] = useState([]);
     const [count, setCount] = useState(3);
 
     useEffect(() => {
+        if(props.savedArticles){
+            setIsButtonVisible(false);
+            setCount(props.cards.length);
+        }
+        else{
         setDisplayedCards(props.cards.slice(0, count));
         if (props.cards.length < count) {
             setIsButtonVisible(false)
-        } else { setIsButtonVisible(true) }
+        } else { setIsButtonVisible(true) }}
+       
     }, [count])
 
     return (
