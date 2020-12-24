@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import NewsCard from '../card/NewsCard';
+import {INITIALCOUNT} from '../../utils/utils'
 function NewsCardList(props) {
+    
     const [isButtonVisible, setIsButtonVisible] = useState(false);
     const [displayedCards, setDisplayedCards] = useState([]);
-    const [count, setCount] = useState(3);
+    const [count, setCount] = useState(INITIALCOUNT);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if(props.savedArticles){
             setIsButtonVisible(false);
             setCount(props.cards.length);
@@ -35,6 +37,7 @@ function NewsCardList(props) {
                         hoverText={props.hoverText}
                         loggedIn={props.loggedIn}
                         cardId={card._id}
+                        onDelete={props.onChange}
                     />)
                 }) : displayedCards.map((card, index) => {
                     return (<NewsCard

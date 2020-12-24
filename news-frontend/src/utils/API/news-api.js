@@ -1,35 +1,34 @@
+import { NEWSAPIAUTH, WEEKAGO } from "../utils";
+
 class NewsApi {
     constructor(baseUrl) {
         this._baseUrl = baseUrl;
         this._today = new Date();
     }
     _getLastWeek() {
-        this._lastWeek = new Date(this._today.getFullYear(), this._today.getMonth(), this._today.getDate() - 7);
+        this._lastWeek = new Date(new Date().getTime() - WEEKAGO);
         return this._lastWeek;
     }
     _getTodayDisplay() {
         const day = this._today.getDate();
-        const month = this._today.getMonth();
+        const month = this._today.getMonth() + 1;
         const year = this._today.getFullYear();
         this._todayDisplay = year + '-' + month + '-' + day;
         return this._todayDisplay
     }
     _getLastWeekDisplay() {
+        this._lastWeek = this._getLastWeek()
         const lastWeekYear = this._lastWeek.getFullYear();
-        const lastWeekMonth = this._lastWeek.getMonth();
+        const lastWeekMonth = this._lastWeek.getMonth() + 1;
         const lastWeekDay = this._lastWeek.getDate();
         this._lastWeekDisplay = lastWeekYear + '-' + lastWeekMonth + '-' + lastWeekDay;
         return this._lastWeekDisplay
     }
-    getArticles(keyword) {
-        return fetch(this._baseUrl + '/v2/everything?q=' + keyword + '&from=' + this._lastWeekDisplay + '&to=' + this._todayDisplay + '&pageSize=100&apiKey=4f6e4e7d0f1443aeab5a8dc6dcb3d632', {
-            headers: {
-                authorization: "4f6e4e7d0f1443aeab5a8dc6dcb3d632",
-                'content-type':'application/json'
-            }
-        })
+    async getArticles(keyword) {
+        return fetch(this._baseUrl + '/v2/everything?q=' + keyword + '&from=' + this._getLastWeekDisplay() + '&to=' + this._getTodayDisplay() + '&pageSize=100&apiKey='+ NEWSAPIAUTH)
             .then((res) => res.ok ? res.json() : Promise.reject(`Error!` + res.status + res.statusText))
-
+            .then ((res)=> { return  res.articles})
+        
     }
 }
 

@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Redirect } from "react-router-dom";
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
+    useEffect(()=>{
+      if (!localStorage.getItem('jwt')) {
+      props.signInDirect()
+    }})
 
   return (
     <Route>
       {
-        () => props.loggedIn ?
-            <Component {...props} />
+         localStorage.getItem('jwt') ?
+          <Component {...props} />
           : <Redirect to="/" />
       }
     </Route>

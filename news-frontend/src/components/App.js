@@ -11,7 +11,8 @@ import NewsCardList from './results/NewsCardList';
 import Preloader from './results/Preloader';
 import NoResults from './results/NoResults';
 import SavedNews from './saved/SavedNews';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import ResultError from './results/ResultError';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import newsApi from '../utils/API/news-api';
 import * as auth from '../utils/auth';
 import ProtectedRoute from './ProtectedRoute';
@@ -27,6 +28,7 @@ function App() {
   const [results, setResults] = useState(false);
   const [loading, setLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
+  const [resultError, setResultError] = useState(false);
   const [userToken, setUserToken] = useState('');
   const history = useHistory()
 
@@ -36,12 +38,12 @@ function App() {
       setUserToken(token)
       auth.checkToken(token)
         .then(res => {
-          setCurrentUser(res)
-          setLoggedIn(true)
+          setCurrentUser(res);
+          setLoggedIn(true);
         })
         .catch(err => console.log(err))
     }
-  }, [userToken])
+  }, [])
 
   function openSignIn() {
     setIsSignUpOpen(false);
@@ -89,9 +91,6 @@ function App() {
   }
   function signUpSubmit({ email, password, name }) {
     auth.register(email, password, name)
-      .then(res => {
-        console.log(res)
-      })
       .then(() => {
         setIsSignUpOpen(false);
         openSuccess();
@@ -108,25 +107,28 @@ function App() {
   function search(keyword) {
     setKeyword(keyword)
     setNoResults(false)
+    setResultError(false)
     setResults(false)
     setLoading(true)
     newsApi.getArticles(keyword)
-      .then(res => { setCards(res.articles) })
-      .then(() => {
+      .then(res => {
+        setCards(res)
         setLoading(false);
-        if (cards.length === 0) {
+        if (res.length === 0) {
           setNoResults(true)
         } else {
           setNoResults(false);
           setResults(true);
         }
       })
-    .catch((err)=>{
-      setLoading(false);
-      console.log(err);
-    })
+    
+      .catch((err) => {
+        setLoading(false);
+        setResultError(true);
+        console.log(err);
+      })
   }
-  
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
 
@@ -136,19 +138,20 @@ function App() {
           {results ? <NewsCardList cards={cards} keyword={keyword} loggedIn={loggedIn} hoverText="Sign in to save articles" /> : ''}
           {noResults ? <NoResults /> : ''}
           {loading ? <Preloader /> : ''}
+          {resultError ? <ResultError /> : ''}
           <About />
         </Route>
-        <ProtectedRoute 
-        path="/saved-news"
-        loggedIn={loggedIn}
-        component={SavedNews}
-        headerClick={logout}
+        <ProtectedRoute
+          path="/saved-news"
+          loggedIn={loggedIn}
+          component={SavedNews}
+          headerClick={logout}
+          signInDirect={openSignIn}
         />
-
-
+        <Route path="/*">
+          <Redirect to="/" />
+        </Route>
       </Switch>
-
-
 
       <Footer />
       <RegistrationComplete isOpen={isRegistrationCompleteOpen} linkClick={openSignIn} onClose={closeAll} />

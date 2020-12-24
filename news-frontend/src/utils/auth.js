@@ -9,11 +9,11 @@ export const register = (email, password, name) => fetch(`${BASE_URL}/signup`, {
   body: JSON.stringify({ email, password, name })
 })
   .then((response) => {
-    if(response.ok){
+    if (response.ok) {
       return response.json()
     } return Promise.reject(`Error!` + response.status + response.statusText)
   })
-  .then((res) => {    return res});
+  .then((res) => { return res });
 
 export const authorize = (password, email) => fetch(`${BASE_URL}/signin`, {
   method: 'POST',
@@ -24,7 +24,7 @@ export const authorize = (password, email) => fetch(`${BASE_URL}/signin`, {
   body: JSON.stringify({ password, email }),
 })
   .then((response) => {
-    if(response.ok){
+    if (response.ok) {
       return response.json()
     } return Promise.reject(`Error!` + response.status + response.statusText)
   })
@@ -44,5 +44,5 @@ export const checkToken = (token) => fetch(`${BASE_URL}/users/me`, {
     'Authorization': `Bearer ${token}`,
   }
 })
-  .then((res) => {return res.json()})
-  .then((data) => {return data})
+  .then((res) => { return res.json() })
+  .then((data) => { return data })

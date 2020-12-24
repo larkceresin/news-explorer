@@ -4,7 +4,7 @@ import PracticumBackend from '../../utils/API/practicum-api';
 function NewsCard(props) {
   const [isVisible, setIsVisible] = useState(false);
   const [cardId, setCardId] = useState('');
-  const [userToken, setUserToken] = useState(localStorage.getItem('jwt'));
+  const userToken = localStorage.getItem('jwt');
 
   const practicumBackend = new PracticumBackend({
     baseUrl: 'https://www.api.larkceresin.students.nomoreparties.site',
@@ -20,7 +20,7 @@ function NewsCard(props) {
       return
     } setIsVisible(true)
   }
-  
+
   function handleSaveClick(e) {
     if (props.loggedIn) {
       if (!e.target.classList.contains('card__save-button_saved')) {
@@ -37,26 +37,34 @@ function NewsCard(props) {
             e.target.classList.add('card__save-button_saved')
           })
       } if (e.target.classList.contains('card__save-button_saved')) {
-        props.removeClickHandler(cardId)
-        e.target.classList.remove('card__save-button_saved')
+        practicumBackend.removeArticle(cardId)
+        .then(()=>{
+          e.target.classList.remove('card__save-button_saved');
+        })
+        .catch(err=>console.log(err))
+
       }
     } return
   }
 
-  function handleRemoveClick() {
-    if (props.cardId){
+  function handleRemoveClick(e) {
+    if (props.cardId) {
       setCardId(props.cardId)
       practicumBackend.removeArticle(props.cardId)
+        .then(() => {
+          props.onDelete(props.cardId)
+        })
+        .catch(err => console.log(err))
     }
-   
+
   }
-  
+
   function formatDate() {
-    let articleDate = props.date || '2020-12-12';
+    let articleDate = props.date;
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let noTime = articleDate.slice(0, 10);
     let date = new Date(noTime);
-    let formattedDate = `${months[date.getMonth()]} ${date.getDay()},  ${date.getFullYear()}`;
+    let formattedDate = `${months[date.getMonth()]} ${date.getDate()},  ${date.getFullYear()}`;
     return formattedDate
   }
 
