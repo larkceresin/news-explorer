@@ -40,8 +40,9 @@
     width: 358px;
     margin: 0 auto;
 }
-.form__input:active{
+.form__input:focus{
     background-color: white;
+    outline: none;
 }
 .form__input-error{
     margin: 0 36px;
