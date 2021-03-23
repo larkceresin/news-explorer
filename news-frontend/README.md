@@ -1,4 +1,4 @@
-Running frontend [here](https://larkceresin.github.io/news-frontend/)
+Demo in action [here](https://youtu.be/qZHzTWTiyHU)
 
 # Getting Started with Create React App
 
