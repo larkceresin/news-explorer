@@ -2,8 +2,7 @@ Demo in action [here](https://youtu.be/qZHzTWTiyHU)
 
 This frontend runs with two apis
 [NewsApi](https://newsapi.org/)
-and the backend I created here [News-backend](https://github.com/larkceresin/news-backend)
-
+and the backend I created
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
