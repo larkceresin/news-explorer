@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://www.api.larkceresin.students.nomoreparties.site';
+export const BASE_URL = 'https://localHost:3000';
 
 export const register = (email, password, name) => fetch(`${BASE_URL}/signup`, {
   method: 'POST',
